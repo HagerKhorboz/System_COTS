@@ -28,16 +28,6 @@ Ensure you have the following software installed:
    cd atmega328-drivers
    ```
 
-### Compiling and Uploading
-
-To compile and upload the drivers to your ATmega328, use the following commands:
-```bash
-avr-gcc -mmcu=atmega328p -Os -DF_CPU=16000000UL -o main.bin main.c
-avr-objcopy -O ihex -R .eeprom main.bin main.hex
-avrdude -c arduino -p m328p -P [PORT] -b 115200 -U flash:w:main.hex
-```
-Replace `[PORT]` with the port your ATmega328 is connected to (e.g., `/dev/ttyUSB0`).
-
 ## Usage
 
 Include the necessary driver headers in your main program file, initialize the drivers, and use them as required.
